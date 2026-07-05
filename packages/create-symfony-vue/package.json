@@ -1,6 +1,6 @@
 {
   "name": "@mrbryan1502/create-symfony-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffold a new Symfony 7 + Vue 3 project",
   "author": "mrbryan1502",
   "type": "module",

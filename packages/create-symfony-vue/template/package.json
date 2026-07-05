@@ -11,8 +11,8 @@
     "test": "phpunit"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "mrbryan1502",
+  "license": "MIT",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",

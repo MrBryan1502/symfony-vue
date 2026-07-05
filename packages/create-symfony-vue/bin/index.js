@@ -81,8 +81,8 @@ if (!projectName) {
   console.error('\n  \x1b[31mError:\x1b[0m Debes especificar un nombre para el proyecto');
   console.error('');
   console.error('  \x1b[1mUso:\x1b[0m');
-  console.error(`    $ npx create-symfony-vue \x1b[33m<project-name>\x1b[0m`);
-  console.error(`    $ pnpm dlx create-symfony-vue \x1b[33m<project-name>\x1b[0m`);
+  console.error(`    $ npx @mrbryan1502/create-symfony-vue \x1b[33m<project-name>\x1b[0m`);
+  console.error(`    $ pnpm dlx @mrbryan1502/create-symfony-vue \x1b[33m<project-name>\x1b[0m`);
   console.error('');
   process.exit(1);
 }

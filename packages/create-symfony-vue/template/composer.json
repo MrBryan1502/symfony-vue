@@ -3,6 +3,11 @@
     "type": "project",
     "description": "Plantilla moderna Symfony 7 + Vue 3 con Vite, TypeScript, Pinia y Vue Router",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "mrbryan1502"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {

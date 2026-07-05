@@ -27,10 +27,10 @@ Esto instala automáticamente las dependencias de PHP **y** las de frontend (pnp
 
 ```bash
 # Con npm
-npx create-symfony-vue mi-app
+npx @mrbryan1502/create-symfony-vue mi-app
 
 # Con pnpm
-pnpm dlx create-symfony-vue mi-app
+pnpm dlx @mrbryan1502/create-symfony-vue mi-app
 ```
 
 Esto crea el proyecto e instala tanto las dependencias PHP (composer) como las de frontend (npm/pnpm/yarn automáticamente detectado).

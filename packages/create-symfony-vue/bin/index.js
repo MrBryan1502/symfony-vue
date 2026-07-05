@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, mkdirSync, readdirSync, copyFileSync, readFileSync, writeFileSync, rmSync } from 'fs';
-import { join, resolve, dirname, basename } from 'path';
+import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
@@ -44,10 +44,6 @@ function detectPackageManager() {
   if (hasTool('yarn')) return 'yarn';
   if (hasTool('bun')) return 'bun';
   return 'npm';
-}
-
-function sanitizeName(name) {
-  return basename(name).toLowerCase().replace(/[^a-z0-9_-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
 function printBanner(name) {
@@ -101,12 +97,12 @@ console.log(`\n  \x1b[90mCreando proyecto\x1b[0m ${projectName} \x1b[90m...\x1b[
 
 copyRecursive(TEMPLATE_DIR, projectDir);
 
-// Update composer.json name
+// Remove name from composer.json (create-project does the same)
 const composerJsonPath = join(projectDir, 'composer.json');
 try {
   const content = readFileSync(composerJsonPath, 'utf-8');
   const json = JSON.parse(content);
-  json.name = sanitizeName(projectName);
+  delete json.name;
   writeFileSync(composerJsonPath, JSON.stringify(json, null, 4) + '\n');
 } catch {}
 
@@ -116,7 +112,10 @@ printBanner(projectName);
 const hasComposer = hasTool('composer');
 if (hasComposer) {
   console.log('  \x1b[90mInstalando dependencias PHP (composer install) ...\x1b[0m');
-  execSync('composer install --no-interaction', { cwd: projectDir, stdio: 'inherit' });
+  execSync('composer install --no-interaction --no-scripts', { cwd: projectDir, stdio: 'inherit' });
+  try {
+    execSync('composer run-script auto-scripts', { cwd: projectDir, stdio: 'inherit' });
+  } catch {}
 } else {
   console.log('  \x1b[33m\u26a0\x1b[0m  \x1b[90mComposer no est\xe1 instalado. Ejecuta "composer install" manualmente.\x1b[0m');
 }

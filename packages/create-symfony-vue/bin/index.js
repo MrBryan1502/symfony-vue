@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readdirSync, copyFileSync, readFileSync, writeFileSync, rmSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, copyFileSync, readFileSync, writeFileSync, rmSync, renameSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -96,6 +96,13 @@ if (existsSync(projectDir)) {
 console.log(`\n  \x1b[90mCreando proyecto\x1b[0m ${projectName} \x1b[90m...\x1b[0m\n`);
 
 copyRecursive(TEMPLATE_DIR, projectDir);
+
+// Rename _gitignore to .gitignore (npm excludes .gitignore from tarball)
+const gitignoreSrc = join(projectDir, '_gitignore');
+const gitignoreDst = join(projectDir, '.gitignore');
+if (existsSync(gitignoreSrc)) {
+  renameSync(gitignoreSrc, gitignoreDst);
+}
 
 // Remove name from composer.json (create-project does the same)
 const composerJsonPath = join(projectDir, 'composer.json');

@@ -16,6 +16,7 @@ const IGNORE = new Set([
   'packages',
   'scripts',
   '.env.local',
+  '.gitignore',
 ]);
 
 function copyRecursive(src, dest) {
@@ -44,5 +45,8 @@ if (existsSync(TEMPLATE_DIR)) {
 
 mkdirSync(TEMPLATE_DIR, { recursive: true });
 copyRecursive(ROOT, TEMPLATE_DIR);
+
+// Copy .gitignore as _gitignore so npm doesn't exclude it from the tarball
+copyFileSync(join(ROOT, '.gitignore'), join(TEMPLATE_DIR, '_gitignore'));
 
 console.log('Template synced successfully!');

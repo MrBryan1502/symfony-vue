@@ -121,6 +121,9 @@ if (hasComposer) {
   console.log('  \x1b[90mInstalando dependencias PHP (composer install) ...\x1b[0m');
   execSync('composer install --no-interaction --no-scripts', { cwd: projectDir, stdio: 'inherit' });
   try {
+    execSync('composer recipes:install symfony/security-bundle --force --no-interaction 2>&1', { cwd: projectDir, stdio: 'inherit' });
+  } catch {}
+  try {
     execSync('composer run-script auto-scripts', { cwd: projectDir, stdio: 'inherit' });
   } catch {}
 } else {

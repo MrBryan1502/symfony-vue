@@ -1,0 +1,26 @@
+{
+  "name": "create-symfony-vue",
+  "version": "1.0.0",
+  "description": "Scaffold a new Symfony 7 + Vue 3 project",
+  "type": "module",
+  "bin": {
+    "create-symfony-vue": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "template"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "symfony",
+    "vue",
+    "vue3",
+    "symfony7",
+    "vite",
+    "scaffold",
+    "template"
+  ],
+  "license": "MIT"
+}

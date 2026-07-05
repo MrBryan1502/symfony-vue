@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "usernamehw.errorlens",
+        "DEVSENSE.phptools-vscode",
+        "bmewburn.vscode-intelephense-client",
+        "bajdzis.vscode-twig-pack",
+        "Vue.volar",
+        "DEVSENSE.intelli-php-vscode",
+        "DEVSENSE.composer-php-vscode",
+        "xdebug.php-pack",
+        "xdebug.php-debug",
+        "zobo.php-intellisense"
+    ]
+}

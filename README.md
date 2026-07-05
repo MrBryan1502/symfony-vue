@@ -94,7 +94,6 @@ symfony-vue/
 │   ├── router/              # Configuración de Vue Router
 │   ├── src/
 │   │   └── App.vue          # Componente raíz (welcome page)
-│   ├── controllers/         # Stimulus controllers (opcional)
 │   ├── styles/              # Estilos adicionales
 │   └── vendor/              # Assets de vendor
 ├── config/                  # Configuración de Symfony (YAML)

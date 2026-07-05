@@ -1,0 +1,11 @@
+{
+  "assets/main.ts": {
+    "file": "assets/app-CodIQPQd.js",
+    "name": "app",
+    "src": "assets/main.ts",
+    "isEntry": true,
+    "css": [
+      "assets/app-B_V1pdqA.css"
+    ]
+  }
+}
